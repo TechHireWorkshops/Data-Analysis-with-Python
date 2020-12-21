@@ -2,7 +2,7 @@
 
 ## Data Analysis
 
-Data analysis is the practice of taking raw data and tranforming and modeling the data to extract meaningful information.  It is the process of interpreting data in a way that allows us to understand the underlying trends and causes that determine the data, and/or  allowing us to determine future decision-making.
+Data analysis is the practice of taking raw data and transforming and modeling the data to extract meaningful information.  It is the process of interpreting data in a way that allows us to understand the underlying trends and causes that determine the data, and/or  allowing us to determine future decision-making.
 
 Data analysis is something we do automatically in our everyday lives. We use it to determine our optimal routes to places, based on how long each route took us in the past.  We use it to determine what foods we should eat in what amounts, based on how these meals made us feel in the past.  We use it to determine what movies we should watch, based on how much we liked similar and dissimilar movies in the past and which actors and directors we enjoyed.
 
@@ -53,7 +53,7 @@ Predictive analysis aims to describe what is going to happen. This takes the dat
 
 #### Prescriptive Analysis
 
-Presciptive analysis aims to describe what we should do to achieve a certain goal based on what we think is going to happen and how our actions will affect that. This is an extension of predictive analysis, and involves complex mathematics and computer science.  Prescriptive analysis is the goal of AI, and is highly sought after.
+Prescriptive analysis aims to describe what we should do to achieve a certain goal based on what we think is going to happen and how our actions will affect that. This is an extension of predictive analysis, and involves complex mathematics and computer science.  Prescriptive analysis is the goal of AI, and is highly sought after.
 
 ## Data Analysis with Pandas
 
@@ -136,7 +136,7 @@ Pandas gives us lots of methods to transform and model our data. We can filter o
 
 	df[df['Sex'] == 'male']
 
-shows us the records of the male passengers. If we want to create a new dataframe eith just the records of the male passengers with fresh indexes, we could run
+shows us the records of the male passengers. If we want to create a new dataframe with just the records of the male passengers with fresh indexes, we could run
 
 	first = df[df['Pclass'] == 1].reset_index()
 
@@ -144,7 +144,7 @@ We can also order records by largest or smallest.  If we wanted to find the reco
 
 	print(df.nlargest(100, 'Fare'))
 
-Grouping is one of the most powerful standard data analysis tools we have.  We can see how mnay recorded belong to each group using
+Grouping is one of the most powerful standard data analysis tools we have.  We can see how many records belong to each group using
 
 	print(df.groupby(['Pclass']).count())
 
@@ -160,7 +160,7 @@ We can also use
 
 to glean other data.
 
-We can group by more than 1 column at a time, and examine pertitent columns..  Let's take a look at this:
+We can group by more than 1 column at a time, and examine pertinent columns..  Let's take a look at this:
 
 	print(df.groupby(['Pclass', 'Sex'])['Survived'].mean())
 
@@ -176,11 +176,11 @@ and import matplotlib.pyplot it into our files with something like
 
 	import matplotlib.pyplot as matplot
 
-One of the most useful graphs we can create is a histogram. We can run `df.hist()` to create one, though it can be confusing to look at without some specification.  We can use the `column` property to choose whats columns to display, and the `by` property to create seperate histograms for different column groups.
+One of the most useful graphs we can create is a histogram. We can run `df.hist()` to create one, though it can be confusing to look at without some specification.  We can use the `column` property to choose whats columns to display, and the `by` property to create separate histograms for different column groups.
 
 	df.hist(column='Age', by='Pclass')
 	
-This will show us 3 histograms showing passengers by age, one for each of the seperate classes. To see the plots we create, we run
+This will show us 3 histograms showing passengers by age, one for each of the separate classes. To see the plots we create, we run
 
 	matplot.show()
 
